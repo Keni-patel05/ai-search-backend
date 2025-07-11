@@ -7,7 +7,7 @@ const authMiddleware = require('../middleware/authMiddleware');
 require("dotenv").config();
 
 //SIGNUP ROUTE
-router.post("/signUp", async (req, res) => {
+router.post("/signup", async (req, res) => {
   let { username, name, email, password } = req.body;
   let user = await userModel.findOne({ email: email });
 
