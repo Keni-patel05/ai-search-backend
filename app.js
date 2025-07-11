@@ -12,11 +12,16 @@ const app = express();
 
 // Configure CORS with specific options
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://ai-search-frontend1.vercel.app'], // ✅ allow both localhost & Vercel
+  origin: [
+    'http://localhost:5173',
+    'https://ai-search-frontend1.vercel.app',
+    'https://ai-search-frontend-ten.vercel.app' // ✅ NEW frontend
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
+
 
 // Increase the JSON payload limit to 10MB
 app.use(bodyParser.json({ limit: '10mb' }));
